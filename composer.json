@@ -1,0 +1,12 @@
+{
+    "name": "odannyc/treeize",
+    "description": "The ultimate tree library. For all your tree recursion needs.",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Danny Carrillo",
+            "email": "odannycx@gmail.com"
+        }
+    ],
+    "require": {}
+}
