@@ -8,5 +8,9 @@
             "email": "odannycx@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Treeize\\": "src/"
+        }
+    }
 }
