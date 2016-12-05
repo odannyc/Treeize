@@ -1,4 +1,6 @@
 <?php
+namespace Treeize;
+
 /**
  * @author Danny Carrillo <odannycx@gmail.com>
  * @package Treeize
