@@ -23,28 +23,28 @@ class Tree
      *
      * @string
      */
-    public $parentKey;
+    public $parentKey = 'parent_id';
 
     /**
      * The index in which the parent is based off of
      *
      * @string
      */
-    public $indexKey;
+    public $indexKey = 'id';
 
     /**
      * The initial parent ID
      *
      * @string|@int
      */
-    public $parentId;
+    public $parentId = 0;
 
     /**
      * This should be set to what the children key should say.
      *
      * @string
      */
-    public $childrenKey;
+    public $childrenKey = 'children';
 
     /**
      * Tree constructor.
@@ -114,6 +114,11 @@ class Tree
      */
     public function parse()
     {
+        // If parent_id doesn't exist, find it
+        if (empty($this->parentId)) {
+            $this->parentId = Utils::findParentId($this->tree, $this->parentKey, $this->indexKey);
+        }
+
         $this->tree = Recurse::this($this);
 
         return $this;

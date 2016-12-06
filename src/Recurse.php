@@ -38,7 +38,7 @@ class Recurse
      *
      * @return array $finalTree
      */
-    public static function recurse($tree, $parentKey, $indexKey, $parentId = 0, $childrenKey = 'children')
+    public static function recurse($tree, $parentKey, $indexKey, $parentId, $childrenKey)
     {
         $finalTree = [];
 
