@@ -43,9 +43,9 @@ class Recurse
 
         foreach ($tree as $value) {
             if ($value[$parentKey] == $parentId) {
-                $children = self::recurse($tree, $value[$indexKey], $indexKey);
+                $children = self::recurse($tree, $parentKey, $indexKey, $value[$indexKey], $childrenKey);
                 if ($children) {
-                    $element[$childrenKey] = $children;
+                    $value[$childrenKey] = $children;
                 }
                 $finalTree[] = $value;
             }
