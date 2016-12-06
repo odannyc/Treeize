@@ -13,7 +13,8 @@ class Recurse
 {
     /**
      * @param $object
-     * @return Recurse
+     *
+     * @return array
      */
     public static function this($object)
     {
