@@ -24,7 +24,7 @@ class Utils
     {
         $parentId = 0;
         foreach ($tree as $branch) {
-            if (array_search($branch[$parentKey], array_column($tree, $indexKey))) {
+            if (!array_search($branch[$parentKey], array_column($tree, $indexKey))) {
                 $parentId = $branch[$parentKey];
             }
         }
