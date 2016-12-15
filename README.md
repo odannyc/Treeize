@@ -127,5 +127,5 @@ Treeize::create($tree)
 `childrenKey`
  - Sets the children key name as described above.
  
- `parse`
+`parse`
  - Accepts a callback function that you can apply to each item in the tree, an item is an array in this instance.
