@@ -47,6 +47,12 @@ class Tree
     public $childrenKey = 'children';
 
     /**
+     * A callback function that gets applied to every item in the array.
+     * @var null
+     */
+    public $callback = null;
+
+    /**
      * Tree constructor.
      *
      * @param array $tree
@@ -110,15 +116,17 @@ class Tree
     }
 
     /**
+     * @param callable $callback
      * @return $this
      */
-    public function parse()
+    public function parse(callable $callback)
     {
         // If parent_id doesn't exist, find it
         if (empty($this->parentId)) {
             $this->parentId = Utils::findParentId($this->tree, $this->parentKey, $this->indexKey);
         }
 
+        $this->callback = $callback;
         $this->tree = Recurse::this($this);
 
         return $this;
