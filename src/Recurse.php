@@ -45,7 +45,7 @@ class Recurse
         $finalTree = [];
 
         foreach ($tree as $value) {
-            $value = $callback($value);
+            $value = is_null($callback) ? $value : $callback($value);
             if ($value[$parentKey] == $parentId) {
                 $children = self::recurse($tree, $parentKey, $indexKey, $value[$indexKey], $childrenKey, $callback);
                 if ($children) {
