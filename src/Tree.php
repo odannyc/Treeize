@@ -119,7 +119,7 @@ class Tree
      * @param callable $callback
      * @return $this
      */
-    public function parse(callable $callback)
+    public function parse(callable $callback = null)
     {
         // If parent_id doesn't exist, find it
         if (empty($this->parentId)) {
